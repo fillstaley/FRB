@@ -52,7 +52,7 @@ def _convert(frame):
     """
     Helper funcation to build a parameterized url.
     """
-    frame = frame.convert_objects(convert_numeric=True)
+    frame = frame.convert_dtypes()
     for column in frame:
         if column in c.dates:
             frame[column] = frame[column].astype('datetime64')
